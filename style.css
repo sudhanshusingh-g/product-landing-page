@@ -1,5 +1,11 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Reset CSS */
 :root{
     --orange:hsl(26, 100%, 55%);
     --pale-orange:hsl(25, 100%, 94%);
@@ -8,17 +14,142 @@
     --grayish-blue:hsl(220, 14%, 75%);
     --light-grayish-blue:hsl(223,64%,98%);
     --white:hsl(0, 0%, 100%);
+    --black:hsl(0, 0%, 0%);
     --black-opacity: hsla(0, 0%, 0%, 0.75);
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body{
     font-family: 'Kumbh Sans', sans-serif;
-    background-color: var(--light-grayish-blue);
+    font-size: 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
     color: var(--very-dark-blue);
+}
+.container{
+    max-width: 1140px;
+    padding: 0.4rem;
+    height: 100%;
+    width: 100%;
+}
+
+/* Header */
+header{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: 100%;
+    border-bottom: 1px solid var(--grayish-blue);
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+}
+.left_nav{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.left_nav ul{
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+.left_nav ul li{
+    position: relative;
+}
+.left_nav ul li::after{
+    content: '';
+    position: absolute;
+    bottom: -1.8rem;
+    left: 50%;
+    width: 0;
+    height: 0.1rem;
+    background-color: var(--orange);
+    transition: width 0.5s, left 0.5s; /* Transition both width and left */
+    transform: translateX(-50%); 
+}
+.left_nav ul li:hover::after{
+    width: 100%;
+    left: 0;
+    transform: none;
+}
+.right_nav{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Images container */
+.logo{
+    width: 8rem;
+    cursor: pointer;
+}
+.cart{
+    width: 1.4rem;
+    cursor: pointer;
+    position: relative;
+}
+.cart span{
+    position: absolute;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 0.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    top: -0.4rem;
+    right: -0.4rem;
+}
+.user_profile{
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.user_profile:hover{
+    border: 2px solid var(--orange);
+
+}
+.menu_icon{
+    /* Desktop display */
+    display: none;
+    width: 1.4rem;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 768px){
+    .container{
+        padding: 0 1rem;
+    }
+    .left_nav ul{
+        display: none;
+    }
+    /* Mobile menu icon */
+    .menu_icon{
+        display: block;
+    }
+    
+    
 }
