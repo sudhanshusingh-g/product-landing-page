@@ -16,11 +16,13 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <title>E-commerce product page</title>
   </head>
   <body>
     <div class="container">
+      <div class="outlay"></div>
       <header>
         <section class="mobile_menu">
           <div class="menu_icon">
@@ -44,12 +46,32 @@
             <div class="cart">
               <img src="./images/icon-cart.svg" alt="Cart">
               <span>0</span>
+              
             </div>
             <div class="user_profile">
               <img src="./images/image-avatar.png" alt="User">
             </div>
+            <div class="popup_container">
+                <h4>Cart</h4>
+                <div class="cart_content">
+                  <p>Your cart is empty</p>
+                </div>
+              </div>
           </section>
         </nav>
+
+        <div class="side_menubar">
+          <div class="close_icon">
+            <img src="./images/icon-close.svg" alt="Close Icon">
+          </div>
+          <ul>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
       </header>
     </div>
     <!-- <header>
