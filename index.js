@@ -12,6 +12,8 @@ const increment = document.querySelector(".increment");
 const quantity = document.querySelector(".quantity p");
 const cartQuantity=document.querySelector(".cart span");
 const addToCart = document.querySelector(".add_to_cart");
+const cartEmpty = document.querySelector(".cart_empty");
+const cartProduct = document.querySelector(".product_in_cart");
 
 // ProductImages
 const productImages = [
@@ -33,10 +35,7 @@ closeMenu.addEventListener("click", () => {
   sideMenu.classList.remove("active");
 });
 
-// Show and hide cart popup
-cartIcon.addEventListener("click", () => {
-  cartPopup.classList.toggle("active");
-});
+
 
 let currentIndex = 0;
 // Navigate product image
@@ -69,4 +68,13 @@ decrement.addEventListener("click", () => {
 
 addToCart.addEventListener("click",()=>{
     cartQuantity.textContent=counter;
-})
+});
+
+// Show and hide cart popup
+cartIcon.addEventListener("click", () => {
+  cartPopup.classList.toggle("active");
+  if(counter>0){
+    cartEmpty.style.display="none";
+    cartProduct.classList.add("active");
+  }
+});
